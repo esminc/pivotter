@@ -1,0 +1,7 @@
+--- 
+:script: jquery
+:mock: rr
+:renderer: haml
+:stylesheet: sass
+:test: rspec
+:orm: datamapper
