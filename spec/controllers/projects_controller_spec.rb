@@ -38,5 +38,35 @@ describe "ProjectsController" do
 				XML
 			end
 		end
+
+		context '複数のストーリーが削除されたとき' do
+			specify do
+				mock(bot = Object.new).say('Keita Urashima deleted 2 stories - http://www.pivotaltracker.com/story/show/3138008 http://www.pivotaltracker.com/story/show/3138007')
+				stub(ShoutBot).shout(@project.irc_channel) {|_, block| block.call(bot) }
+
+				post '/projects/rubyagile/activities', <<-XML
+<?xml version="1.0" encoding="UTF-8"?>
+<activity>
+  <id type="integer">16546072</id>
+  <version type="integer">705</version>
+  <event_type>multi_story_delete</event_type>
+  <occurred_at type="datetime">2010/04/13 12:09:15 UTC</occurred_at>
+  <author>Keita Urashima</author>
+  <project_id type="integer">3574</project_id>
+  <description>Keita Urashima deleted 2 stories</description>
+  <stories>
+    <story>
+      <id type="integer">3138008</id>
+      <url>https://www.pivotaltracker.com/services/v3/projects/3574/stories/3138008</url>
+    </story>
+    <story>
+      <id type="integer">3138007</id>
+      <url>https://www.pivotaltracker.com/services/v3/projects/3574/stories/3138007</url>
+    </story>
+  </stories>
+</activity>
+				XML
+			end
+		end
 	end
 end
