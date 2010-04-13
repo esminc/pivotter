@@ -11,12 +11,12 @@ gem 'datamapper'
 gem 'shout-bot'
 gem 'nokogiri'
 
+group :production do
+	gem 'do_postgres'
+end
+
 group :test do
 	gem 'rr'
 	gem 'rspec', :require => 'spec'
 	gem 'rack-test', :require => 'rack/test'
 end
-
-
-
-
