@@ -6,3 +6,4 @@ bin/*
 log/**/*
 tmp/**/*
 vendor/gems/*
+db/*.db
