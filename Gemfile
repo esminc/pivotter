@@ -9,9 +9,14 @@ gem 'data_objects'
 gem 'do_sqlite3'
 gem 'datamapper'
 gem 'shout-bot'
+gem 'nokogiri'
 
 group :test do
 	gem 'rr'
 	gem 'rspec', :require => 'spec'
 	gem 'rack-test', :require => 'rack/test'
 end
+
+
+
+

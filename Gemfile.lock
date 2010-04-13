@@ -8,11 +8,7 @@ dependencies:
     group: 
     - :default
     version: ">= 0"
-  data_objects: 
-    group: 
-    - :default
-    version: ">= 0"
-  rake: 
+  haml: 
     group: 
     - :default
     version: ">= 0"
@@ -20,7 +16,11 @@ dependencies:
     group: 
     - :default
     version: = 0.9.9
-  haml: 
+  rake: 
+    group: 
+    - :default
+    version: ">= 0"
+  data_objects: 
     group: 
     - :default
     version: ">= 0"
@@ -49,6 +49,10 @@ dependencies:
     - :default
     version: ">= 0"
   do_sqlite3: 
+    group: 
+    - :default
+    version: ">= 0"
+  nokogiri: 
     group: 
     - :default
     version: ">= 0"
@@ -105,6 +109,8 @@ specs:
     version: 2.2.23
 - i18n: 
     version: 0.3.6
+- nokogiri: 
+    version: 1.4.1
 - rack: 
     version: 1.1.0
 - sinatra: 
@@ -139,7 +145,7 @@ specs:
     version: 0.0.4
 - thin: 
     version: 1.2.7
-hash: 99f6a0d6663c598704881010a3a17970dcc884d3
+hash: 2cf6abd414801b2f5fcca7192d905733eadd403b
 sources: 
 - Rubygems: 
     uri: http://gemcutter.org

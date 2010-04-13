@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper.rb')
 
 describe "ProjectsController" do
@@ -8,7 +9,7 @@ describe "ProjectsController" do
 
 		context 'コメントが付けられたとき' do
 			specify do
-				mock(bot = Object.new).say('Keita Urashima added comment: "テステス" - http://www.pivotaltracker.com/story/show/1455909')
+				mock(bot = Object.new).say('Keita Urashima added comment: "テステス" - http://www.pivotaltracker.com/story/show/2809938')
 				stub(ShoutBot).shout(@project.irc_channel) {|_, block| block.call(bot) }
 
 				post '/projects/rubyagile/activities', <<-XML
