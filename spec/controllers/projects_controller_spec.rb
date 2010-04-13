@@ -8,10 +8,3 @@ describe "ProjectsController" do
 		end
 	end
 end
-
-
-
-
-
-
-
