@@ -3,14 +3,18 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper.rb')
 
 describe "ProjectsController" do
 	describe "/projects/:name/activities" do
+		def expect_shout(irc_channel, message)
+			mock(bot = Object.new).say(message)
+			stub(ShoutBot).shout(irc_channel) {|_, block| block.call(bot) }
+		end
+
 		before do
 			@project = Project.create!(:name => 'rubyagile', :irc_channel => 'irc://example.com/#rubyagile')
 		end
 
 		context 'コメントが付けられたとき' do
 			specify do
-				mock(bot = Object.new).say('Keita Urashima added comment: "テステス" - http://www.pivotaltracker.com/story/show/2809938')
-				stub(ShoutBot).shout(@project.irc_channel) {|_, block| block.call(bot) }
+				expect_shout @project.irc_channel, 'Keita Urashima added comment: "テステス" - http://www.pivotaltracker.com/story/show/2809938'
 
 				post '/projects/rubyagile/activities', <<-XML
 <?xml version="1.0" encoding="UTF-8"?>
@@ -41,8 +45,7 @@ describe "ProjectsController" do
 
 		context '複数のストーリーが削除されたとき' do
 			specify do
-				mock(bot = Object.new).say('Keita Urashima deleted 2 stories - http://www.pivotaltracker.com/story/show/3138008 http://www.pivotaltracker.com/story/show/3138007')
-				stub(ShoutBot).shout(@project.irc_channel) {|_, block| block.call(bot) }
+				expect_shout @project.irc_channel, 'Keita Urashima deleted 2 stories - http://www.pivotaltracker.com/story/show/3138008 http://www.pivotaltracker.com/story/show/3138007'
 
 				post '/projects/rubyagile/activities', <<-XML
 <?xml version="1.0" encoding="UTF-8"?>
