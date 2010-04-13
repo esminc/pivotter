@@ -58,7 +58,7 @@ specs:
 - bcrypt-ruby: 
     version: 2.1.2
 - bundler: 
-    version: 0.9.18
+    version: 0.9.19
 - daemons: 
     version: 1.0.10
 - data_objects: 
