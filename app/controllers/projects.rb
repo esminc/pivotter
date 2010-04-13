@@ -4,10 +4,13 @@ Pivotter.controllers :projects do
 
 		node = Nokogiri.parse(request.body.read)
 		desc = node.css("activity description").inner_text
-		id = node.css("activity stories story > id").inner_text
+
+		links = node.css("activity stories story").map {|s|
+			"http://www.pivotaltracker.com/story/show/#{s.at('id').inner_text}"
+		}
 
 		ShoutBot.shout(@project.irc_channel) do |channel|
-			channel.say "#{desc} - http://www.pivotaltracker.com/story/show/#{id}"
+			channel.say "#{desc} - #{links.join(' ')}"
 		end
 	end
 end
