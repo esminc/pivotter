@@ -152,11 +152,11 @@ specs:
     source: 0
 - thin: 
     version: 1.2.7
-hash: 0d11f973ebfa4795dc207be95ebb709fb603b9bb
+hash: f2a2e42deab9136f3ddee8a18f178490ac053e70
 sources: 
 - Git: 
-    uri: http://github.com/hsbt/shout-bot.git
-    git: http://github.com/hsbt/shout-bot.git
-    ref: 44f0cb48ff0e2b1dfd619cf980d8771cbec1dc2a
+    uri: git://github.com/hsbt/shout-bot.git
+    git: git://github.com/hsbt/shout-bot.git
+    ref: 6a32239c532e7c596cf434aafaaedd801a320b23
 - Rubygems: 
     uri: http://gemcutter.org

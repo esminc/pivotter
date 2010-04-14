@@ -8,7 +8,7 @@ gem 'haml'
 gem 'data_objects'
 gem 'do_sqlite3'
 gem 'datamapper'
-gem 'shout-bot', :git => 'http://github.com/hsbt/shout-bot.git'
+gem 'shout-bot', :git => 'git://github.com/hsbt/shout-bot.git'
 gem 'nokogiri'
 
 group :production do
