@@ -148,10 +148,15 @@ specs:
 - rspec: 
     version: 1.3.0
 - shout-bot: 
-    version: 0.0.4
+    version: 0.0.5
+    source: 0
 - thin: 
     version: 1.2.7
-hash: 7646dcac44589de2e26b16d588937a45f805f8b5
+hash: 0d11f973ebfa4795dc207be95ebb709fb603b9bb
 sources: 
+- Git: 
+    uri: http://github.com/hsbt/shout-bot.git
+    git: http://github.com/hsbt/shout-bot.git
+    ref: 44f0cb48ff0e2b1dfd619cf980d8771cbec1dc2a
 - Rubygems: 
     uri: http://gemcutter.org
