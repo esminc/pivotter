@@ -3,7 +3,7 @@ Pivotter.controllers :projects do
 		@project = Project.first(:name => name)
 
 		node = Nokogiri.parse(request.body.read)
-		desc = node.css("activity description").inner_text
+		desc = node.css("activity > description").inner_text
 
 		links = node.css("activity stories story").map {|s|
 			"http://www.pivotaltracker.com/story/show/#{s.at('id').inner_text}"
