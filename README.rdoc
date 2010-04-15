@@ -2,3 +2,10 @@
 
 [Pivotal Tracker] http://www.pivotaltracker.com/projects/74093
 [IRC] #pivotter on Freenode
+
+= Getting started
+
+$ bundle install --without production
+$ rake dm:create
+$ rake seed # input email/password for admin account.
+$ padrino start
