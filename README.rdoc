@@ -5,7 +5,7 @@
 
 = Getting started
 
-$ bundle install --without production
-$ rake dm:create
-$ rake seed # input email/password for admin account.
-$ padrino start
+ $ bundle install --without production
+ $ rake dm:create
+ $ rake seed # input email/password for admin account.
+ $ bundle exec padrino start # http://localhost:3000/admin/
