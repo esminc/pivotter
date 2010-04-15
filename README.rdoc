@@ -9,3 +9,6 @@
  $ rake dm:create
  $ rake seed # input email/password for admin account.
  $ bundle exec padrino start # http://localhost:3000/admin/
+
+= Testing
+ $ BITLY_ID=YOUR_BITLY_ID BITLY_KEY=YOUR_BITLY_API_KEY bundle exec padrino rake spec

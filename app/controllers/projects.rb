@@ -6,7 +6,7 @@ Pivotter.controllers :projects do
 		desc = node.css("activity > description").inner_text
 
 		links = node.css("activity stories story").map {|s|
-			"http://www.pivotaltracker.com/story/show/#{s.at('id').inner_text}"
+			bitly("http://www.pivotaltracker.com/story/show/#{s.at('id').inner_text}")
 		}
 
 		ShoutBot.shout(@project.irc_channel) do |channel|

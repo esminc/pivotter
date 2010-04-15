@@ -14,7 +14,7 @@ describe "ProjectsController" do
 
 		context 'コメントが付けられたとき' do
 			specify do
-				expect_shout @project.irc_channel, 'Keita Urashima added comment: "テステス" - http://www.pivotaltracker.com/story/show/2809938'
+				expect_shout @project.irc_channel, 'Keita Urashima added comment: "テステス" - http://bit.ly/c6rPQs'
 
 				post '/projects/rubyagile/activities', <<-XML
 <?xml version="1.0" encoding="UTF-8"?>
@@ -45,7 +45,7 @@ describe "ProjectsController" do
 
 		context '複数のストーリーが削除されたとき' do
 			specify do
-				expect_shout @project.irc_channel, 'Keita Urashima deleted 2 stories - http://www.pivotaltracker.com/story/show/3138008 http://www.pivotaltracker.com/story/show/3138007'
+				expect_shout @project.irc_channel, 'Keita Urashima deleted 2 stories - http://bit.ly/an4B8S http://bit.ly/aFKp0d'
 
 				post '/projects/rubyagile/activities', <<-XML
 <?xml version="1.0" encoding="UTF-8"?>
@@ -74,7 +74,7 @@ describe "ProjectsController" do
 
 		context 'ストーリーの description を変更したとき' do
 			specify do
-				expect_shout @project.irc_channel, 'Keita Urashima edited "pivotterをアナウンスする" - http://www.pivotaltracker.com/story/show/3149854'
+				expect_shout @project.irc_channel, 'Keita Urashima edited "pivotterをアナウンスする" - http://bit.ly/bLveRG'
 
 				post '/projects/rubyagile/activities', <<-XML
 <?xml version="1.0" encoding="UTF-8"?>

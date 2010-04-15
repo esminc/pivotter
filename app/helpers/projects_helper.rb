@@ -1,7 +1,7 @@
 # Helper methods defined here can be accessed in any controller or view in the application
 
 Pivotter.helpers do
-  # def simple_helper_method
-  #  ...
-  # end
+	def bitly(url)
+		Bitly.new(ENV['BITLY_ID'], ENV['BITLY_KEY']).shorten(url).short_url
+	end
 end

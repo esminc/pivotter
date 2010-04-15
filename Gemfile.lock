@@ -8,11 +8,7 @@ dependencies:
     group: 
     - :default
     version: ">= 0"
-  data_objects: 
-    group: 
-    - :default
-    version: ">= 0"
-  rake: 
+  haml: 
     group: 
     - :default
     version: ">= 0"
@@ -20,7 +16,11 @@ dependencies:
     group: 
     - :default
     version: = 0.9.9
-  haml: 
+  rake: 
+    group: 
+    - :default
+    version: ">= 0"
+  data_objects: 
     group: 
     - :default
     version: ">= 0"
@@ -38,6 +38,10 @@ dependencies:
     group: 
     - :default
     version: ">= 0"
+  bitly: 
+    group: 
+    - :default
+    version: ">= 0"
   rack-flash: 
     group: 
     - :default
@@ -52,11 +56,11 @@ dependencies:
     group: 
     - :default
     version: ">= 0"
-  nokogiri: 
+  do_sqlite3: 
     group: 
     - :default
     version: ">= 0"
-  do_sqlite3: 
+  nokogiri: 
     group: 
     - :default
     version: ">= 0"
@@ -69,6 +73,10 @@ specs:
     version: 2.1.1
 - bcrypt-ruby: 
     version: 2.1.2
+- crack: 
+    version: 0.1.7
+- bitly: 
+    version: 0.4.0
 - bundler: 
     version: 0.9.19
 - daemons: 
@@ -152,7 +160,7 @@ specs:
     source: 0
 - thin: 
     version: 1.2.7
-hash: f2a2e42deab9136f3ddee8a18f178490ac053e70
+hash: 4fa9c3e4a27adb3ad658e03a48c124de0336a8da
 sources: 
 - Git: 
     uri: git://github.com/hsbt/shout-bot.git
