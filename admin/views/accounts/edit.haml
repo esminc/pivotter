@@ -11,5 +11,3 @@
     .inner
       -form_for :account, url(:accounts, :update, :id => @account.id), :method => :put, :class => :form do |f|
         =partial "accounts/form", :locals => { :f => f }
-
--content_for :sidebar, partial("base/sidebar")

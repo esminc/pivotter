@@ -19,16 +19,10 @@ body{font-size:12px;font-family:sans-serif;}
 #header{position:relative;padding-top:1px;}
 #header h1{margin:0;padding:10px 0;font-size:26px;}
 #header h1 a:link,#header h1 a:active,#header h1 a:hover,#header h1 a:visited{text-decoration:none;}
-#main{width:73%;float:left;}
+#main{width:100%;}
 .actions-bar{padding:10px 1px;}
 .actions-bar .actions{float:left;}
 .actions-bar .pagination{float:right;padding:1px 0;}
-#sidebar{width:25%;float:right;}
-#sidebar h3{padding:10px 15px;margin:0;font-size:13px;}
-#sidebar .block{margin-bottom:20px;padding-bottom:10px;}
-#sidebar .block .content{padding:0 15px;}
-#sidebar ul.navigation li a:link,#sidebar ul.navigation li a:visited{display:block;padding:10px 15px;}
-#sidebar .block .sidebar-block,#sidebar .notice{padding:10px;}
 .message.notice,.message.warning,.message.error{padding:10px;}
 #wrapper{padding-top:20px;}
 #main .block{margin-bottom:20px;padding-top:1px;}
@@ -37,7 +31,7 @@ body{font-size:12px;font-family:sans-serif;}
 #main .main p.first{margin-top:0;}
 #user-navigation{position:absolute;top:0px;right:20px;}
 #main-navigation{width:100%;}
-#user-navigation ul,#main-navigation ul,.secondary-navigation ul,#sidebar ul.navigation{margin:0;padding:0;list-style-type:none;}
+#user-navigation ul,#main-navigation ul,.secondary-navigation ul{margin:0;padding:0;list-style-type:none;}
 #user-navigation ul li,#main-navigation ul li,.secondary-navigation ul li{float:left;}
 #main-navigation ul li{margin-right:5px;}
 #user-navigation ul li{padding:5px 10px;}
