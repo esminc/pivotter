@@ -5,5 +5,5 @@ class Project
   property :id, Serial
   property :name, String
   property :irc_channel, String
-  property :enabled_bitly, Boolean
+  property :enabled_bitly, Boolean, :default => true
 end
