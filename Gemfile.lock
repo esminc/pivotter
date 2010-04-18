@@ -78,7 +78,7 @@ specs:
 - bitly: 
     version: 0.4.0
 - bundler: 
-    version: 0.9.19
+    version: 0.9.21
 - daemons: 
     version: 1.0.10
 - data_objects: 
@@ -122,7 +122,7 @@ specs:
 - haml: 
     version: 2.2.23
 - i18n: 
-    version: 0.3.6
+    version: 0.3.7
 - nokogiri: 
     version: 1.4.1
 - rack: 

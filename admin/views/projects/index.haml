@@ -13,12 +13,14 @@
           %th.first=mat(:project, :id)
           %th=mat(:project, :name)
           %th=mat(:project, :irc_channel)
+          %th=mat(:project, :enabled_bitly)
           %th.last="&nbsp;"
         -@projects.each do |project|
           %tr
             %td.first=project.id
             %td=project.name
             %td=project.irc_channel
+            %td=project.enabled_bitly
             %td.last
               =button_to pat(:edit), url(:projects, :edit, :id => project.id), :method => :get, :class => :button_to
               ="|"

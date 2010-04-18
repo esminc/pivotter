@@ -8,15 +8,16 @@ describe "ProjectsController" do
 			stub(ShoutBot).shout(irc_channel) {|_, block| block.call(bot) }
 		end
 
-		before do
-			@project = Project.create!(:name => 'rubyagile', :irc_channel => 'irc://example.com/#rubyagile')
-		end
+		context 'bitlyが有効なとき' do
+			before do
+				@project = Project.create!(:name => 'rubyagile', :irc_channel => 'irc://example.com/#rubyagile', :enabled_bitly => true)
+			end
 
-		context 'コメントが付けられたとき' do
-			specify do
-				expect_shout @project.irc_channel, 'Keita Urashima added comment: "テステス" - http://bit.ly/c6rPQs'
+			context 'コメントが付けられたとき' do
+				specify do
+					expect_shout @project.irc_channel, 'Keita Urashima added comment: "テステス" - http://bit.ly/c6rPQs'
 
-				post '/projects/rubyagile/activities', <<-XML
+					post '/projects/rubyagile/activities', <<-XML
 <?xml version="1.0" encoding="UTF-8"?>
 <activity>
   <id type="integer">16537497</id>
@@ -39,15 +40,15 @@ describe "ProjectsController" do
     </story>
   </stories>
 </activity>
-				XML
+					XML
+				end
 			end
-		end
 
-		context '複数のストーリーが削除されたとき' do
-			specify do
-				expect_shout @project.irc_channel, 'Keita Urashima deleted 2 stories - http://bit.ly/an4B8S http://bit.ly/aFKp0d'
+			context '複数のストーリーが削除されたとき' do
+				specify do
+					expect_shout @project.irc_channel, 'Keita Urashima deleted 2 stories - http://bit.ly/an4B8S http://bit.ly/aFKp0d'
 
-				post '/projects/rubyagile/activities', <<-XML
+					post '/projects/rubyagile/activities', <<-XML
 <?xml version="1.0" encoding="UTF-8"?>
 <activity>
   <id type="integer">16546072</id>
@@ -68,15 +69,15 @@ describe "ProjectsController" do
     </story>
   </stories>
 </activity>
-				XML
+					XML
+				end
 			end
-		end
 
-		context 'ストーリーの description を変更したとき' do
-			specify do
-				expect_shout @project.irc_channel, 'Keita Urashima edited "pivotterをアナウンスする" - http://bit.ly/bLveRG'
+			context 'ストーリーの description を変更したとき' do
+				specify do
+					expect_shout @project.irc_channel, 'Keita Urashima edited "pivotterをアナウンスする" - http://bit.ly/bLveRG'
 
-				post '/projects/rubyagile/activities', <<-XML
+					post '/projects/rubyagile/activities', <<-XML
 <?xml version="1.0" encoding="UTF-8"?>
 <activity>
   <id type="integer">16618577</id>
@@ -92,6 +93,42 @@ describe "ProjectsController" do
       <url>https://www.pivotaltracker.com/services/v3/projects/3574/stories/3149854</url>
       <description>shout&#12399;&#22768;&#12364;&#12391;&#12363;&#12356;&#12398;&#12391;&#12375;&#12378;&#12363;&#12395;&#35328;&#12358;&#12424;&#12358;&#12395;&#12394;&#12387;&#12383;&#12425;
 README&#12434;&#26360;&#12367; (&#33521;&#35486;&#12391;)</description>
+    </story>
+  </stories>
+</activity>
+					XML
+				end
+			end
+		end
+
+		context 'bitlyが無効なとき' do
+			before do
+				@project = Project.create!(:name => 'pivotter', :irc_channel => 'irc://example.com/#pivotter', :enabled_bitly => false)
+			end
+
+			specify do
+				expect_shout @project.irc_channel, 'Keita Urashima added comment: "テステス" - http://www.pivotaltracker.com/story/show/2809938'
+
+				post '/projects/pivotter/activities', <<-XML
+<?xml version="1.0" encoding="UTF-8"?>
+<activity>
+  <id type="integer">16537497</id>
+  <version type="integer">692</version>
+  <event_type>note_create</event_type>
+  <occurred_at type="datetime">2010/04/13 09:17:55 UTC</occurred_at>
+  <author>Keita Urashima</author>
+  <project_id type="integer">3574</project_id>
+  <description>Keita Urashima added comment: &quot;&#12486;&#12473;&#12486;&#12473;&quot;</description>
+  <stories>
+    <story>
+      <id type="integer">2809938</id>
+      <url>https://www.pivotaltracker.com/services/v3/projects/3574/stories/2809938</url>
+      <notes>
+        <note>
+          <id type="integer">1455909</id>
+          <text>&#12486;&#12473;&#12486;&#12473;</text>
+        </note>
+      </notes>
     </story>
   </stories>
 </activity>
