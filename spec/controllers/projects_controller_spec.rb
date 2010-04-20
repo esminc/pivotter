@@ -15,7 +15,7 @@ describe "ProjectsController" do
 
 			context 'コメントが付けられたとき' do
 				specify do
-					expect_shout @project.irc_channel, '3Keita Urashima added comment: "テステス" - http://bit.ly/c6rPQs'
+					expect_shout @project.irc_channel, '3Keita Urashima added comment: 7"テステス" - http://bit.ly/c6rPQs'
 
 					post '/projects/rubyagile/activities', <<-XML
 <?xml version="1.0" encoding="UTF-8"?>
@@ -46,7 +46,7 @@ describe "ProjectsController" do
 
 			context '複数のストーリーが削除されたとき' do
 				specify do
-					expect_shout @project.irc_channel, '3Keita Urashima deleted 2 stories - http://bit.ly/an4B8S http://bit.ly/aFKp0d'
+					expect_shout @project.irc_channel, '3Keita Urashima deleted 2 stories - http://bit.ly/an4B8S http://bit.ly/aFKp0d'
 
 					post '/projects/rubyagile/activities', <<-XML
 <?xml version="1.0" encoding="UTF-8"?>
@@ -75,7 +75,7 @@ describe "ProjectsController" do
 
 			context 'ストーリーの description を変更したとき' do
 				specify do
-					expect_shout @project.irc_channel, '3Keita Urashima edited "pivotterをアナウンスする" - http://bit.ly/bLveRG'
+					expect_shout @project.irc_channel, '3Keita Urashima edited 7"pivotterをアナウンスする" - http://bit.ly/bLveRG'
 
 					post '/projects/rubyagile/activities', <<-XML
 <?xml version="1.0" encoding="UTF-8"?>
@@ -107,7 +107,7 @@ README&#12434;&#26360;&#12367; (&#33521;&#35486;&#12391;)</description>
 			end
 
 			specify do
-				expect_shout @project.irc_channel, '3Keita Urashima added comment: "テステス" - http://www.pivotaltracker.com/story/show/2809938'
+				expect_shout @project.irc_channel, '3Keita Urashima added comment: 7"テステス" - http://www.pivotaltracker.com/story/show/2809938'
 
 				post '/projects/pivotter/activities', <<-XML
 <?xml version="1.0" encoding="UTF-8"?>
