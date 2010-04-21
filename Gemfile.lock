@@ -78,7 +78,7 @@ specs:
 - bitly: 
     version: 0.4.0
 - bundler: 
-    version: 0.9.21
+    version: 0.9.22
 - daemons: 
     version: 1.0.10
 - data_objects: 
@@ -165,6 +165,6 @@ sources:
 - Git: 
     uri: git://github.com/hsbt/shout-bot.git
     git: git://github.com/hsbt/shout-bot.git
-    ref: 6a32239c532e7c596cf434aafaaedd801a320b23
+    ref: 4b73be368d567001003d9267df336edc7c878fdc
 - Rubygems: 
     uri: http://gemcutter.org

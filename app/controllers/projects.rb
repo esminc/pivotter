@@ -18,7 +18,7 @@ Pivotter.controllers :projects do
 		}
 
 		ShoutBot.shout(@project.irc_channel) do |channel|
-			channel.whisper "#{desc} - #{links.join(' ')}"
+			channel.notice "#{desc} - #{links.join(' ')}"
 		end
 	end
 end
