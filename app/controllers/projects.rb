@@ -6,7 +6,7 @@ Pivotter.controllers :projects do
 		node = Nokogiri.parse(request.body.read)
 
 		author = node.css("activity > author").inner_text
-		desc = node.css("activity > description").inner_text.gsub(/#{author}/, '3\0').gsub(/(\".*?\")/, '7\0')
+		desc = node.css("activity > description").inner_text.gsub(/^#{author}/, '3\0').gsub(/(\".*?\")/, '7\0')
 
 		links = node.css("activity stories story").map {|s|
 			url = "http://www.pivotaltracker.com/story/show/#{s.at('id').inner_text}"
