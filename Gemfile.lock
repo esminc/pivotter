@@ -78,7 +78,7 @@ specs:
 - bitly: 
     version: 0.4.0
 - bundler: 
-    version: 0.9.23
+    version: 0.9.24
 - daemons: 
     version: 1.0.10
 - data_objects: 
