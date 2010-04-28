@@ -2,19 +2,18 @@
   =f.label :name
   =f.error_message_on :name
   =f.text_field :name, :class => :text_field
-  %span.description Ex: a simple text
+  %span.description Ex: myproject
 
 .group
   =f.label :irc_channel
   =f.error_message_on :irc_channel
   =f.text_field :irc_channel, :class => :text_field
-  %span.description Ex: a simple text
+  %span.description Ex: irc://pivotter@irc.freenode.net:6668/#myproject
 
 .group
   =f.label :enabled_bitly
   =f.error_message_on :enabled_bitly
   =f.check_box :enabled_bitly, :value => true, :class => :enabled_bitly
-  %span.description Ex: a simple text
 
 .group.navform.wat-cf
   =f.submit pat(:save), :class => :button

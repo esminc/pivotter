@@ -1,76 +1,19 @@
 --- 
-dependencies: 
-  rr: 
-    group: 
-    - :test
-    version: ">= 0"
-  datamapper: 
-    group: 
-    - :default
-    version: ">= 0"
-  haml: 
-    group: 
-    - :default
-    version: ">= 0"
-  padrino: 
-    group: 
-    - :default
-    version: = 0.9.9
-  rake: 
-    group: 
-    - :default
-    version: ">= 0"
-  data_objects: 
-    group: 
-    - :default
-    version: ">= 0"
-  do_postgres: 
-    group: 
-    - :production
-    version: ">= 0"
-  rspec: 
-    group: 
-    - :test
-    version: ">= 0"
-    require: 
-    - spec
-  thin: 
-    group: 
-    - :default
-    version: ">= 0"
-  bitly: 
-    group: 
-    - :default
-    version: ">= 0"
-  rack-flash: 
-    group: 
-    - :default
-    version: ">= 0"
-  rack-test: 
-    group: 
-    - :test
-    version: ">= 0"
-    require: 
-    - rack/test
-  shout-bot: 
-    group: 
-    - :default
-    version: ">= 0"
-  do_sqlite3: 
-    group: 
-    - :default
-    version: ">= 0"
-  nokogiri: 
-    group: 
-    - :default
-    version: ">= 0"
+hash: 13a7defc6958cee17cc8f8fbc286e2763e38336a
+sources: 
+- Git: 
+    git: git://github.com/hsbt/shout-bot.git
+    uri: git://github.com/hsbt/shout-bot.git
+    ref: 4b73be368d567001003d9267df336edc7c878fdc
+- Rubygems: 
+    uri: http://gemcutter.org
 specs: 
 - rake: 
     version: 0.8.7
 - activesupport: 
     version: 2.3.5
 - addressable: 
-    version: 2.1.1
+    version: 2.1.2
 - bcrypt-ruby: 
     version: 2.1.2
 - crack: 
@@ -120,7 +63,7 @@ specs:
 - fuzzyhash: 
     version: 0.0.11
 - haml: 
-    version: 2.2.23
+    version: 2.2.24
 - i18n: 
     version: 0.3.7
 - nokogiri: 
@@ -134,19 +77,19 @@ specs:
 - usher: 
     version: 0.7.1
 - padrino-core: 
-    version: 0.9.9
+    version: 0.9.10
 - padrino-gen: 
-    version: 0.9.9
+    version: 0.9.10
 - padrino-helpers: 
-    version: 0.9.9
+    version: 0.9.10
 - padrino-admin: 
-    version: 0.9.9
+    version: 0.9.10
 - tmail: 
     version: 1.2.7.1
 - padrino-mailer: 
-    version: 0.9.9
+    version: 0.9.10
 - padrino: 
-    version: 0.9.9
+    version: 0.9.10
 - rack-flash: 
     version: 0.1.1
 - rack-test: 
@@ -160,11 +103,68 @@ specs:
     source: 0
 - thin: 
     version: 1.2.7
-hash: 4fa9c3e4a27adb3ad658e03a48c124de0336a8da
-sources: 
-- Git: 
-    uri: git://github.com/hsbt/shout-bot.git
-    git: git://github.com/hsbt/shout-bot.git
-    ref: 4b73be368d567001003d9267df336edc7c878fdc
-- Rubygems: 
-    uri: http://gemcutter.org
+dependencies: 
+  padrino: 
+    version: ">= 0"
+    group: 
+    - :default
+  rake: 
+    version: ">= 0"
+    group: 
+    - :default
+  rack-flash: 
+    version: ">= 0"
+    group: 
+    - :default
+  thin: 
+    version: ">= 0"
+    group: 
+    - :default
+  haml: 
+    version: ">= 0"
+    group: 
+    - :default
+  data_objects: 
+    version: ">= 0"
+    group: 
+    - :default
+  do_sqlite3: 
+    version: ">= 0"
+    group: 
+    - :default
+  datamapper: 
+    version: ">= 0"
+    group: 
+    - :default
+  shout-bot: 
+    version: ">= 0"
+    group: 
+    - :default
+  nokogiri: 
+    version: ">= 0"
+    group: 
+    - :default
+  bitly: 
+    version: ">= 0"
+    group: 
+    - :default
+  do_postgres: 
+    version: ">= 0"
+    group: 
+    - :production
+  rr: 
+    version: ">= 0"
+    group: 
+    - :test
+  rspec: 
+    version: ">= 0"
+    group: 
+    - :test
+    require: 
+    - spec
+  rack-test: 
+    version: ">= 0"
+    group: 
+    - :test
+    require: 
+    - rack/test

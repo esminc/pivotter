@@ -1,6 +1,6 @@
 source :rubygems
 
-gem 'padrino', '0.9.9'
+gem 'padrino'
 gem 'rake'
 gem 'rack-flash'
 gem 'thin' # or mongrel
