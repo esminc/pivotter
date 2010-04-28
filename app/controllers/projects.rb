@@ -3,7 +3,7 @@ Pivotter.controllers :projects do
 	post '/:name/activities' do |name|
 		@project = Project.first(:name => name)
 
-		node = Nokogiri.parse(request.body.read, nil 'UTF-8')
+		node = Nokogiri.parse(request.body.read, nil, 'UTF-8')
 
 		author = node.css("activity > author").inner_text
 		desc = node.css("activity > description").inner_text.gsub(/^#{author}/, '3\0').gsub(/(\".*?\")/, '7\0')
