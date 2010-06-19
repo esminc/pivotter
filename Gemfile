@@ -1,19 +1,22 @@
 source :rubygems
 
 gem 'padrino'
+
 gem 'rake'
 gem 'rack-flash'
+gem 'crack', '0.1.6'
 gem 'thin' # or mongrel
+
 gem 'haml'
-gem 'data_objects'
-gem 'do_sqlite3'
-gem 'datamapper'
+gem 'dm-sqlite-adapter'
+gem 'data_mapper'
+
 gem 'shout-bot', :git => 'git://github.com/hsbt/shout-bot.git'
 gem 'nokogiri'
 gem 'bitly'
 
 group :production do
-	gem 'do_postgres'
+	gem 'dm-postgres-adapter'
 end
 
 group :test do

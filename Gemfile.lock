@@ -4,14 +4,6 @@ dependencies:
     group: 
     - :test
     version: ">= 0"
-  datamapper: 
-    group: 
-    - :default
-    version: ">= 0"
-  haml: 
-    group: 
-    - :default
-    version: ">= 0"
   padrino: 
     group: 
     - :default
@@ -20,11 +12,19 @@ dependencies:
     group: 
     - :default
     version: ">= 0"
-  data_objects: 
+  haml: 
     group: 
     - :default
     version: ">= 0"
-  do_postgres: 
+  crack: 
+    group: 
+    - :default
+    version: = 0.1.6
+  data_mapper: 
+    group: 
+    - :default
+    version: ">= 0"
+  dm-postgres-adapter: 
     group: 
     - :production
     version: ">= 0"
@@ -46,6 +46,10 @@ dependencies:
     group: 
     - :default
     version: ">= 0"
+  dm-sqlite-adapter: 
+    group: 
+    - :default
+    version: ">= 0"
   rack-test: 
     group: 
     - :test
@@ -53,10 +57,6 @@ dependencies:
     require: 
     - rack/test
   shout-bot: 
-    group: 
-    - :default
-    version: ">= 0"
-  do_sqlite3: 
     group: 
     - :default
     version: ">= 0"
@@ -72,17 +72,15 @@ specs:
 - addressable: 
     version: 2.1.2
 - crack: 
-    version: 0.1.7
+    version: 0.1.6
 - httparty: 
-    version: 0.6.0
+    version: 0.5.2
 - bitly: 
     version: 0.5.1
 - bundler: 
     version: 0.9.26
 - daemons: 
     version: 1.0.10
-- data_objects: 
-    version: 0.10.2
 - extlib: 
     version: 0.9.15
 - dm-core: 
@@ -111,12 +109,20 @@ specs:
     version: 1.0.0
 - dm-validations: 
     version: 1.0.0
-- datamapper: 
+- data_mapper: 
+    version: 1.0.0
+- data_objects: 
+    version: 0.10.2
+- dm-do-adapter: 
     version: 1.0.0
 - do_postgres: 
     version: 0.10.2
+- dm-postgres-adapter: 
+    version: 1.0.0
 - do_sqlite3: 
     version: 0.10.2
+- dm-sqlite-adapter: 
+    version: 1.0.0
 - eventmachine: 
     version: 0.12.10
 - haml: 
@@ -168,7 +174,7 @@ specs:
     source: 0
 - thin: 
     version: 1.2.7
-hash: 13a7defc6958cee17cc8f8fbc286e2763e38336a
+hash: 820cdc20c581db84f90b6cbf9a48099ff8b28a82
 sources: 
 - Git: 
     uri: git://github.com/hsbt/shout-bot.git
