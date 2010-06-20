@@ -19,6 +19,10 @@ class Pivotter < Padrino::Application
     #
   end
 
+  get "/" do
+    redirect "/admin"
+  end
+
   ##
   # You can configure for a specified environment like:
   #
