@@ -14,13 +14,14 @@ gem 'data_mapper'
 gem 'shout-bot', :git => 'git://github.com/hsbt/shout-bot.git'
 gem 'nokogiri'
 gem 'bitly'
+gem 'exceptional'
 
 group :production do
-	gem 'dm-postgres-adapter'
+  gem 'dm-postgres-adapter'
 end
 
 group :test do
-	gem 'rr'
-	gem 'rspec', :require => 'spec'
-	gem 'rack-test', :require => 'rack/test'
+  gem 'rr'
+  gem 'rspec', :require => 'spec'
+  gem 'rack-test', :require => 'rack/test'
 end

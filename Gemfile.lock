@@ -4,7 +4,7 @@ dependencies:
     group: 
     - :test
     version: ">= 0"
-  padrino: 
+  haml: 
     group: 
     - :default
     version: ">= 0"
@@ -12,7 +12,11 @@ dependencies:
     group: 
     - :default
     version: ">= 0"
-  haml: 
+  padrino: 
+    group: 
+    - :default
+    version: ">= 0"
+  data_mapper: 
     group: 
     - :default
     version: ">= 0"
@@ -20,10 +24,6 @@ dependencies:
     group: 
     - :default
     version: = 0.1.6
-  data_mapper: 
-    group: 
-    - :default
-    version: ">= 0"
   dm-postgres-adapter: 
     group: 
     - :production
@@ -38,11 +38,15 @@ dependencies:
     group: 
     - :default
     version: ">= 0"
-  bitly: 
+  exceptional: 
     group: 
     - :default
     version: ">= 0"
   rack-flash: 
+    group: 
+    - :default
+    version: ">= 0"
+  bitly: 
     group: 
     - :default
     version: ">= 0"
@@ -125,6 +129,8 @@ specs:
     version: 1.0.0
 - eventmachine: 
     version: 0.12.10
+- exceptional: 
+    version: 2.0.15
 - haml: 
     version: 3.0.12
 - rack: 
@@ -150,17 +156,17 @@ specs:
 - thor: 
     version: 0.13.6
 - padrino-core: 
-    version: 0.9.11
+    version: 0.9.13
 - padrino-gen: 
-    version: 0.9.11
+    version: 0.9.13
 - padrino-helpers: 
-    version: 0.9.11
+    version: 0.9.13
 - padrino-admin: 
-    version: 0.9.11
+    version: 0.9.13
 - padrino-mailer: 
-    version: 0.9.11
+    version: 0.9.13
 - padrino: 
-    version: 0.9.11
+    version: 0.9.13
 - rack-flash: 
     version: 0.1.1
 - rack-test: 
@@ -174,7 +180,7 @@ specs:
     source: 0
 - thin: 
     version: 1.2.7
-hash: 820cdc20c581db84f90b6cbf9a48099ff8b28a82
+hash: 3fabbaa3e52bde0393550f930d9550e060a9d98c
 sources: 
 - Git: 
     uri: git://github.com/hsbt/shout-bot.git
