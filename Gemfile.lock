@@ -80,11 +80,11 @@ specs:
 - httparty: 
     version: 0.5.2
 - bitly: 
-    version: 0.5.1
+    version: 0.5.2
 - bundler: 
     version: 0.9.26
 - daemons: 
-    version: 1.0.10
+    version: 1.1.0
 - extlib: 
     version: 0.9.15
 - dm-core: 
@@ -130,15 +130,15 @@ specs:
 - eventmachine: 
     version: 0.12.10
 - exceptional: 
-    version: 2.0.15
+    version: 2.0.16
 - haml: 
-    version: 3.0.12
+    version: 3.0.13
 - rack: 
     version: 1.2.1
 - url_mount: 
     version: 0.2.1
 - http_router: 
-    version: 0.2.5
+    version: 0.3.5
 - i18n: 
     version: 0.4.1
 - mime-types: 
@@ -154,19 +154,19 @@ specs:
 - sinatra: 
     version: "1.0"
 - thor: 
-    version: 0.13.6
+    version: 0.13.8
 - padrino-core: 
-    version: 0.9.13
+    version: 0.9.14
 - padrino-gen: 
-    version: 0.9.13
+    version: 0.9.14
 - padrino-helpers: 
-    version: 0.9.13
+    version: 0.9.14
 - padrino-admin: 
-    version: 0.9.13
+    version: 0.9.14
 - padrino-mailer: 
-    version: 0.9.13
+    version: 0.9.14
 - padrino: 
-    version: 0.9.13
+    version: 0.9.14
 - rack-flash: 
     version: 0.1.1
 - rack-test: 
