@@ -16,17 +16,17 @@ dependencies:
     group: 
     - :default
     version: ">= 0"
-  data_mapper: 
+  dm-postgres-adapter: 
     group: 
-    - :default
+    - :production
     version: ">= 0"
   crack: 
     group: 
     - :default
     version: = 0.1.6
-  dm-postgres-adapter: 
+  data_mapper: 
     group: 
-    - :production
+    - :default
     version: ">= 0"
   rspec: 
     group: 
@@ -38,7 +38,7 @@ dependencies:
     group: 
     - :default
     version: ">= 0"
-  exceptional: 
+  bitly: 
     group: 
     - :default
     version: ">= 0"
@@ -46,13 +46,9 @@ dependencies:
     group: 
     - :default
     version: ">= 0"
-  bitly: 
-    group: 
-    - :default
-    version: ">= 0"
   dm-sqlite-adapter: 
     group: 
-    - :default
+    - :test
     version: ">= 0"
   rack-test: 
     group: 
@@ -129,8 +125,6 @@ specs:
     version: 1.0.0
 - eventmachine: 
     version: 0.12.10
-- exceptional: 
-    version: 2.0.16
 - haml: 
     version: 3.0.13
 - rack: 
@@ -154,7 +148,7 @@ specs:
 - sinatra: 
     version: "1.0"
 - thor: 
-    version: 0.13.8
+    version: 0.14.0
 - padrino-core: 
     version: 0.9.14
 - padrino-gen: 
@@ -180,7 +174,7 @@ specs:
     source: 0
 - thin: 
     version: 1.2.7
-hash: 3fabbaa3e52bde0393550f930d9550e060a9d98c
+hash: f4d9c7368ea7879aa555bb437ea8a5a93b32d9fd
 sources: 
 - Git: 
     uri: git://github.com/hsbt/shout-bot.git

@@ -5,7 +5,7 @@ class Pivotter < Padrino::Application
     ##
     # Application-specific configuration options
     #
-    set :raise_errors, true     # Show exceptions (default for development)
+    # set :raise_errors, true     # Show exceptions (default for development)
     # set :public, "foo/bar"      # Location for static assets (default root/public)
     # set :sessions, false        # Enabled by default
     # set :reload, false          # Reload application files (default in development)

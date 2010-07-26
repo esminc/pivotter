@@ -1,27 +1,27 @@
 source :rubygems
 
 gem 'padrino'
-
 gem 'rake'
 gem 'rack-flash'
 gem 'crack', '0.1.6'
-gem 'thin' # or mongrel
-
+gem 'thin'
 gem 'haml'
-gem 'dm-sqlite-adapter'
 gem 'data_mapper'
-
 gem 'shout-bot', :git => 'git://github.com/hsbt/shout-bot.git'
 gem 'nokogiri'
 gem 'bitly'
-gem 'exceptional'
+
+group :development do
+	gem 'dm-sqlite-adapter'
+end
 
 group :production do
-  gem 'dm-postgres-adapter'
+	gem 'dm-postgres-adapter'
 end
 
 group :test do
-  gem 'rr'
-  gem 'rspec', :require => 'spec'
-  gem 'rack-test', :require => 'rack/test'
+	gem 'dm-sqlite-adapter'
+	gem 'rr'
+	gem 'rspec', :require => 'spec'
+	gem 'rack-test', :require => 'rack/test'
 end
