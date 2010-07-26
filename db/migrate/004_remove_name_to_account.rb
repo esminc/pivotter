@@ -13,10 +13,3 @@ migration 4, :remove_name_to_account do
     end
   end
 end
-
-
-
-
-
-
-
