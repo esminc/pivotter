@@ -1,6 +1,7 @@
 source :rubygems
 
 gem 'padrino'
+gem 'sinatra', '1.1.0'
 gem 'rake'
 gem 'haml'
 gem 'data_mapper'
@@ -13,7 +14,7 @@ group :development, :test do
 end
 
 group :test do
-	gem 'rspec'
+	gem 'rspec', '~> 1.3.1'
 	gem 'rr'
 	gem 'rack-test', :require => 'rack/test'
 end
