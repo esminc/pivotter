@@ -10,10 +10,10 @@ GEM
   specs:
     activesupport (3.0.3)
     addressable (2.2.2)
-    bitly (0.6.0)
+    bitly (0.6.1)
       crack (>= 0.1.4)
       httparty (>= 0.5.2)
-      oauth2
+      oauth2 (>= 0.1.1)
     crack (0.1.8)
     data_mapper (1.0.2)
       dm-aggregates (= 1.0.2)
@@ -73,6 +73,10 @@ GEM
       multipart-post (~> 1.1.0)
       rack (>= 1.1.0, < 2)
     fastercsv (1.5.4)
+    fuubar (0.0.3)
+      rspec (~> 2.0)
+      rspec-instafail (~> 0.1.4)
+      ruby-progressbar (~> 0.0.9)
     git (1.2.5)
     haml (3.0.25)
     http_router (0.4.1)
@@ -91,7 +95,7 @@ GEM
     multi_json (0.0.5)
     multipart-post (1.1.0)
     nokogiri (1.4.4)
-    oauth2 (0.1.0)
+    oauth2 (0.1.1)
       faraday (~> 0.5.0)
       multi_json (~> 0.0.4)
     padrino (0.9.19)
@@ -132,7 +136,9 @@ GEM
     rspec-core (2.4.0)
     rspec-expectations (2.4.0)
       diff-lcs (~> 1.1.2)
+    rspec-instafail (0.1.5)
     rspec-mocks (2.4.0)
+    ruby-progressbar (0.0.9)
     sinatra (1.1.0)
       rack (~> 1.1)
       tilt (~> 1.1)
@@ -154,6 +160,7 @@ DEPENDENCIES
   data_mapper
   dm-postgres-adapter
   dm-sqlite-adapter
+  fuubar
   haml
   nokogiri
   padrino

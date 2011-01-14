@@ -17,6 +17,7 @@ group :test do
 	gem 'rspec'
 	gem 'rr'
 	gem 'rack-test', :require => 'rack/test'
+	gem 'fuubar'
 end
 
 group :production do

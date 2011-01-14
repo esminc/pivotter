@@ -2,22 +2,26 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper.rb')
 
 describe "ProjectsController" do
-	describe "/projects/:name/activities" do
-		def expect_shout(irc_channel, message)
-			mock(bot = Object.new).notice(message)
-			stub(ShoutBot).shout(irc_channel) {|_, block| block.call(bot) }
-		end
+  describe "/projects/:name/activities" do
+    def expect_shout(irc_channel, message)
+      mock(bot = Object.new).notice(message)
+      stub(ShoutBot).shout(irc_channel) {|_, block| block.call(bot) }
+    end
 
-		context 'bitlyが有効なとき' do
-			before do
-				@project = Project.create!(:name => 'rubyagile', :irc_channel => 'irc://example.com/#rubyagile', :enabled_bitly => true)
-			end
+    context 'bitlyが有効なとき' do
+      before do
+        @project = Project.create!(:name => 'rubyagile', :irc_channel => 'irc://example.com/#rubyagile', :enabled_bitly => true)
+      end
 
-			context 'コメントが付けられたとき' do
-				specify do
-					expect_shout @project.irc_channel, '3Keita Urashima added comment: 7"テステス" - http://bit.ly/c6rPQs'
+      context 'コメントが付けられたとき' do
+        before do
+          stub(Bitly).new.with_any_args.stub!.shorten.with_any_args.stub!.short_url { 'http://bit.ly/c6rPQs' }
+        end
 
-					post '/projects/rubyagile/activities', <<-XML
+        specify do
+          expect_shout @project.irc_channel, '3Keita Urashima added comment: 7"テステス" - http://bit.ly/c6rPQs'
+
+          post '/projects/rubyagile/activities', <<-XML
 <?xml version="1.0" encoding="UTF-8"?>
 <activity>
   <id type="integer">16537497</id>
@@ -40,15 +44,19 @@ describe "ProjectsController" do
     </story>
   </stories>
 </activity>
-					XML
-				end
-			end
+          XML
+        end
+      end
 
-			context '複数のストーリーが削除されたとき' do
-				specify do
-					expect_shout @project.irc_channel, '3Keita Urashima deleted 2 stories - http://bit.ly/an4B8S http://bit.ly/aFKp0d'
+      context '複数のストーリーが削除されたとき' do
+        before do
+          stub(Bitly).new.with_any_args.stub!.shorten.with_any_args.stub!.short_url { 'http://bit.ly/c6rPQs' }
+        end
 
-					post '/projects/rubyagile/activities', <<-XML
+        specify do
+          expect_shout @project.irc_channel, '3Keita Urashima deleted 2 stories - http://bit.ly/c6rPQs http://bit.ly/c6rPQs'
+
+          post '/projects/rubyagile/activities', <<-XML
 <?xml version="1.0" encoding="UTF-8"?>
 <activity>
   <id type="integer">16546072</id>
@@ -69,15 +77,19 @@ describe "ProjectsController" do
     </story>
   </stories>
 </activity>
-					XML
-				end
-			end
+          XML
+        end
+      end
 
-			context 'ストーリーの description を変更したとき' do
-				specify do
-					expect_shout @project.irc_channel, '3Keita Urashima edited 7"pivotterをアナウンスする" - http://bit.ly/bLveRG'
+      context 'ストーリーの description を変更したとき' do
+        before do
+          stub(Bitly).new.with_any_args.stub!.shorten.with_any_args.stub!.short_url { 'http://bit.ly/c6rPQs' }
+        end
 
-					post '/projects/rubyagile/activities', <<-XML
+        specify do
+          expect_shout @project.irc_channel, '3Keita Urashima edited 7"pivotterをアナウンスする" - http://bit.ly/c6rPQs'
+
+          post '/projects/rubyagile/activities', <<-XML
 <?xml version="1.0" encoding="UTF-8"?>
 <activity>
   <id type="integer">16618577</id>
@@ -96,20 +108,20 @@ README&#12434;&#26360;&#12367; (&#33521;&#35486;&#12391;)</description>
     </story>
   </stories>
 </activity>
-					XML
-				end
-			end
-		end
+          XML
+        end
+      end
+    end
 
-		context 'bitlyが無効なとき' do
-			before do
-				@project = Project.create!(:name => 'pivotter', :irc_channel => 'irc://example.com/#pivotter', :enabled_bitly => false)
-			end
+    context 'bitlyが無効なとき' do
+      before do
+        @project = Project.create!(:name => 'pivotter', :irc_channel => 'irc://example.com/#pivotter', :enabled_bitly => false)
+      end
 
-			specify do
-				expect_shout @project.irc_channel, '3Keita Urashima added comment: 7"テステス" - http://www.pivotaltracker.com/story/show/2809938'
+      specify do
+        expect_shout @project.irc_channel, '3Keita Urashima added comment: 7"テステス" - http://www.pivotaltracker.com/story/show/2809938'
 
-				post '/projects/pivotter/activities', <<-XML
+        post '/projects/pivotter/activities', <<-XML
 <?xml version="1.0" encoding="UTF-8"?>
 <activity>
   <id type="integer">16537497</id>
@@ -132,8 +144,8 @@ README&#12434;&#26360;&#12367; (&#33521;&#35486;&#12391;)</description>
     </story>
   </stories>
 </activity>
-				XML
-			end
-		end
-	end
+        XML
+      end
+    end
+  end
 end
