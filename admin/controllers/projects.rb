@@ -13,7 +13,7 @@ Admin.controllers :projects do
   post :create do
     @project = Project.new(params[:project])
     if @project.save
-      flash[:notice] = 'Project was successfully created.'
+      # flash[:notice] = 'Project was successfully created.'
       redirect url(:projects, :edit, :id => @project.id)
     else
       render 'projects/new'
@@ -28,7 +28,7 @@ Admin.controllers :projects do
   put :update, :with => :id do
     @project = Project.get(params[:id])
     if @project.update(params[:project])
-      flash[:notice] = 'Project was successfully updated.'
+      # flash[:notice] = 'Project was successfully updated.'
       redirect url(:projects, :edit, :id => @project.id)
     else
       render 'projects/edit'
@@ -38,9 +38,9 @@ Admin.controllers :projects do
   delete :destroy, :with => :id do
     project = Project.get(params[:id])
     if project.destroy
-      flash[:notice] = 'Project was successfully destroyed.'
+      # flash[:notice] = 'Project was successfully destroyed.'
     else
-      flash[:error] = 'Impossible destroy Project!'
+      # flash[:error] = 'Impossible destroy Project!'
     end
     redirect url(:projects, :index)
   end
