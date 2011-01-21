@@ -1,7 +1,7 @@
 class Pivotter < Padrino::Application
-  configure do
-    register SassInitializer
-  end
+  register SassInitializer
+  register Padrino::Mailer
+  register Padrino::Helpers
 
   get "/" do
     redirect "/admin"
