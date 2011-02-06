@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 class Pivotter < Padrino::Application
   register SassInitializer
   register Padrino::Mailer

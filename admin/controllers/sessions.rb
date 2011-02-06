@@ -1,5 +1,5 @@
+# -*- coding: utf-8 -*-
 Admin.controllers :sessions do
-
   get :new do
     render "/sessions/new", nil, :layout => false
   end

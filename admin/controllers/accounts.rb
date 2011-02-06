@@ -1,5 +1,5 @@
+# -*- coding: utf-8 -*-
 Admin.controllers :accounts do
-
   get :index do
     @accounts = Account.all
     render 'accounts/index'

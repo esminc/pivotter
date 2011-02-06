@@ -1,5 +1,4 @@
-# Helper methods defined here can be accessed in any controller or view in the application
-
+# -*- coding: utf-8 -*-
 Pivotter.helpers do
 	def bitly(url)
 		Bitly.use_api_version_3

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 require 'digest/sha1'
 
 class Account
@@ -56,7 +57,7 @@ class Account
 
   private
 
-    def password_required
-      crypted_password.blank? || !password.blank?
-    end
+  def password_required
+    crypted_password.blank? || !password.blank?
+  end
 end

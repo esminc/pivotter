@@ -1,5 +1,5 @@
+# -*- coding: utf-8 -*-
 Admin.controllers :projects do
-
   get :index do
     @projects = Project.all
     render 'projects/index'
