@@ -11,7 +11,7 @@
         #block-login.block
           %h2 Login Box
           .content.login
-            -# .flash=[:error, :warning, :notice].map { |type| flash_tag(type, :class => "message #{type}") }.join
+            .flash=[:error, :warning, :notice].map { |type| flash_tag(type, :class => "message #{type}") }.join
             -form_tag(url(:sessions, :create), :class => 'form login') do
               .group.wat-cf
                 .left
