@@ -5,7 +5,7 @@ Admin.controllers :sessions do
   end
 
   post :create do
-    if account = Account.authenticate(params[:email], params[:password])
+    if account = Account.authenticate(params[:name], params[:password])
       set_current_account(account)
       redirect url(:base, :index)
     else
