@@ -18,8 +18,9 @@ group :test do
 	gem 'fuubar'
 end
 
-group :development, :test do
-	gem 'dm-sqlite-adapter'
+group :development do
+	gem 'dm-sqlite-adapter', :group => :test
+	gem 'heroku'
 end
 
 group :production do
