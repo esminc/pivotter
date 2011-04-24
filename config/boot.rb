@@ -15,4 +15,6 @@ end
 Bundler.require(:default, PADRINO_ENV)
 puts "=> Located #{Padrino.bundle} Gemfile for #{Padrino.env}"
 
+::YAML::ENGINE.yamler = 'syck'
+
 Padrino.load!
