@@ -4,7 +4,3 @@ require 'thor'
 require 'padrino-core/cli/rake'
 
 PadrinoTasks.init
-
-
-
-
