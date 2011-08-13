@@ -1,0 +1,11 @@
+bundler_args: --without development:test
+
+rvm:
+  - 1.9.2
+  - 1.9.3
+  - ruby-head
+
+script: bundle exec padrino rake spec
+
+notifications:
+  irc: "irc.freenode.org#pivotter"
