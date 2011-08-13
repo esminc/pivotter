@@ -5,7 +5,9 @@ rvm:
   - 1.9.3
   - ruby-head
 
-script: bundle exec padrino rake spec
+env: PADRINO_ENV=test
+
+script: bundle exec padrino rake dm:auto:migrate spec
 
 notifications:
   irc: "irc.freenode.org#pivotter"
