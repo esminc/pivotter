@@ -1,29 +1,33 @@
 .block
   .secondary-navigation
     %ul.wat-cf
-      %li.first.active=link_to pat(:list), url(:projects, :index)
-      %li=link_to pat(:new), url(:projects, :new)
+      %li.first.active= link_to pat(:list), url(:projects, :index)
+      %li= link_to pat(:new), url(:projects, :new)
   .content
     %h2.title
-      =pat(:all)
-      =mt(:project)
+      = pat(:all)
+      = mt(:project)
     .inner
       %table.table
         %tr
-          %th.first=mat(:project, :id)
-          %th=mat(:project, :name)
-          %th=mat(:project, :irc_channel)
-          %th=mat(:project, :enabled_bitly)
-          %th.last="&nbsp;"
-        -@projects.each do |project|
+          %th.first= mat(:project, :id)
+          %th= mat(:project, :name)
+          %th= mat(:project, :irc_channel)
+          %th= mat(:project, :password)
+          %th= mat(:project, :ssl)
+          %th= mat(:project, :enabled_bitly)
+          %th.last= "&nbsp;"
+        - @projects.each do |project|
           %tr
-            %td.first=project.id
-            %td=project.name
-            %td=project.irc_channel
-            %td=project.enabled_bitly
+            %td.first= project.id
+            %td= project.name
+            %td= project.irc_channel
+            %td= project.password
+            %td= project.ssl
+            %td= project.enabled_bitly
             %td.last
-              =button_to pat(:edit), url(:projects, :edit, :id => project.id), :method => :get, :class => :button_to
+              = button_to pat(:edit), url(:projects, :edit, :id => project.id), :method => :get, :class => :button_to
               ="|"
-              =button_to pat(:delete), url(:projects, :destroy, :id => project.id), :method => :delete, :class => :button_to
+              = button_to pat(:delete), url(:projects, :destroy, :id => project.id), :method => :delete, :class => :button_to
       .actions-bar.wat-cf
-        .actions="&nbsp;"
+        .actions= "&nbsp;"

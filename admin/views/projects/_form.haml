@@ -11,6 +11,17 @@
   %span.description Ex: irc://pivotter@irc.freenode.net:6668/#myproject
 
 .group
+  =f.label :password
+  =f.error_message_on :password
+  =f.text_field :password, :class => :text_field
+  %span.description Ex: foobarbuzz
+
+.group
+  =f.label :ssl
+  =f.error_message_on :ssl
+  =f.check_box :ssl, :value => true, :class => :ssl
+
+.group
   =f.label :enabled_bitly
   =f.error_message_on :enabled_bitly
   =f.check_box :enabled_bitly, :value => true, :class => :enabled_bitly

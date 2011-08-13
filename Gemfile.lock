@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/hsbt/shout-bot.git
-  revision: 4b73be368d567001003d9267df336edc7c878fdc
+  revision: bdfde4e8783299dd413be12608f39ac08e2f477b
   specs:
     shout-bot (0.0.5)
       addressable

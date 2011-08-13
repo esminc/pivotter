@@ -3,14 +3,14 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper.rb')
 
 describe "ProjectsController" do
   describe "/projects/:name/activities" do
-    def expect_shout(irc_channel, message)
+    def expect_shout(irc_channel, message, password, ssl)
       mock(bot = Object.new).notice(message)
-      stub(ShoutBot).shout(irc_channel) {|_, block| block.call(bot) }
+      stub(ShoutBot).shout(irc_channel, password, ssl) {|_, _, _, block| block.call(bot) }
     end
 
     context 'bitlyが有効なとき' do
       before do
-        @project = Project.create!(:name => 'rubyagile', :irc_channel => 'irc://example.com/#rubyagile', :enabled_bitly => true)
+        @project = Project.create!(:name => 'rubyagile', :irc_channel => 'irc://example.com/#rubyagile', :enabled_bitly => true, :password => nil, :ssl => false)
       end
 
       context 'コメントが付けられたとき' do
@@ -19,7 +19,7 @@ describe "ProjectsController" do
         end
 
         specify do
-          expect_shout @project.irc_channel, '3Keita Urashima added comment: 7"テステス" - http://bit.ly/c6rPQs'
+          expect_shout @project.irc_channel, '3Keita Urashima added comment: 7"テステス" - http://bit.ly/c6rPQs', nil, false
 
           post '/projects/rubyagile/activities', <<-XML
 <?xml version="1.0" encoding="UTF-8"?>
@@ -54,7 +54,7 @@ describe "ProjectsController" do
         end
 
         specify do
-          expect_shout @project.irc_channel, '3Keita Urashima deleted 2 stories - http://bit.ly/c6rPQs http://bit.ly/c6rPQs'
+          expect_shout @project.irc_channel, '3Keita Urashima deleted 2 stories - http://bit.ly/c6rPQs http://bit.ly/c6rPQs', nil, false
 
           post '/projects/rubyagile/activities', <<-XML
 <?xml version="1.0" encoding="UTF-8"?>
@@ -87,7 +87,7 @@ describe "ProjectsController" do
         end
 
         specify do
-          expect_shout @project.irc_channel, '3Keita Urashima edited 7"pivotterをアナウンスする" - http://bit.ly/c6rPQs'
+          expect_shout @project.irc_channel, '3Keita Urashima edited 7"pivotterをアナウンスする" - http://bit.ly/c6rPQs', nil, false
 
           post '/projects/rubyagile/activities', <<-XML
 <?xml version="1.0" encoding="UTF-8"?>
@@ -115,11 +115,11 @@ README&#12434;&#26360;&#12367; (&#33521;&#35486;&#12391;)</description>
 
     context 'bitlyが無効なとき' do
       before do
-        @project = Project.create!(:name => 'pivotter', :irc_channel => 'irc://example.com/#pivotter', :enabled_bitly => false)
+        @project = Project.create!(:name => 'pivotter', :irc_channel => 'irc://example.com/#pivotter', :enabled_bitly => false, :password => nil, :ssl => true)
       end
 
       specify do
-        expect_shout @project.irc_channel, '3Keita Urashima added comment: 7"テステス" - http://www.pivotaltracker.com/story/show/2809938'
+        expect_shout @project.irc_channel, '3Keita Urashima added comment: 7"テステス" - http://www.pivotaltracker.com/story/show/2809938', nil, true
 
         post '/projects/pivotter/activities', <<-XML
 <?xml version="1.0" encoding="UTF-8"?>
