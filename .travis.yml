@@ -2,8 +2,6 @@ bundler_args: --without development:production
 
 rvm:
   - 1.9.2
-  - 1.9.3
-  - ruby-head
 
 env: PADRINO_ENV=test
 
