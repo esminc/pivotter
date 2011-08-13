@@ -1,28 +1,29 @@
 source :rubygems
 
 gem 'padrino'
-gem 'rake'
+gem 'rake', '~> 0.8.7'
 gem 'rack-flash'
-gem 'thin'
 
 gem 'data_mapper'
 gem 'haml'
+gem 'sass'
 gem 'shout-bot', :git => 'git://github.com/hsbt/shout-bot.git'
 gem 'nokogiri'
 gem 'bitly'
 
 group :test do
-	gem 'rspec'
-	gem 'rr'
-	gem 'rack-test', :require => 'rack/test'
-	gem 'fuubar'
+  gem 'rspec'
+  gem 'rr'
+  gem 'rack-test', :require => 'rack/test'
+  gem 'fuubar'
 end
 
 group :development do
-	gem 'dm-sqlite-adapter', :group => :test
-	gem 'heroku'
+  gem 'thin'
+  gem 'heroku'
+  gem 'dm-sqlite-adapter', :group => :test
 end
 
 group :production do
-	gem 'dm-postgres-adapter'
+  gem 'dm-postgres-adapter'
 end
