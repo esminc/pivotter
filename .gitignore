@@ -2,6 +2,7 @@
 .DS_Store
 .bundle/*
 .sass-cache/*
+.rbenv-version
 bin/*
 log
 tmp
