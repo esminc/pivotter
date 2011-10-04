@@ -7,8 +7,9 @@ gem 'rack-flash'
 gem 'data_mapper'
 gem 'haml'
 gem 'sass'
-gem 'shout-bot', :git => 'git://github.com/hsbt/shout-bot.git'
+
 gem 'nokogiri'
+gem 'shout-bot', :git => 'git://github.com/hsbt/shout-bot.git'
 gem 'bitly'
 
 group :test do
